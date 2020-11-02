@@ -2,7 +2,7 @@ class SuperArray {
   private String[] data;
   private int size;
   public SuperArray() {
-    data = new String[10];
+    data = new String[1];
     size = 0;
   }
   public int size() {
