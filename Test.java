@@ -19,8 +19,9 @@ class Test {
     }
     System.out.println(words.isEmpty());
     System.out.println(words.toString());
+    System.out.println(words.contains("uni"));
+    System.out.println(words.contains("bean"));
     words.clear();
     System.out.println(words.isEmpty());
-
   }
 }
