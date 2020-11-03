@@ -32,10 +32,6 @@ class SuperArray {
     return true;
     }
     public boolean isEmpty() {
-      return data.length == 0;
-    }
-    public void clear() {
-      size = 0;
-      data.length = 0;
+      return size == 0;
     }
 }
