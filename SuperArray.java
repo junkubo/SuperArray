@@ -38,4 +38,11 @@ class SuperArray {
     data = new String[10];
     size = 0;
   }
+  public String toString() {
+    String x = "";
+    for (int i = 0; i < data.length; i++) {
+      x += data[i];
+    }
+    return x;
+  }
 }

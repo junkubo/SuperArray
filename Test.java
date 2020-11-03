@@ -18,7 +18,9 @@ class Test {
       System.out.println( words.get(i) );
     }
     System.out.println(words.isEmpty());
+    System.out.println(words.toString());
     words.clear();
     System.out.println(words.isEmpty());
+
   }
 }
