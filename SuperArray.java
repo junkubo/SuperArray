@@ -42,6 +42,7 @@ class SuperArray {
     String x = "";
     for (int i = 0; i < data.length; i++) {
       x += data[i];
+      x += ", ";
     }
     return x;
   }
