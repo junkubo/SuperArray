@@ -17,5 +17,8 @@ class Test {
     for(int i = 0; i < words.size(); i++){
       System.out.println( words.get(i) );
     }
+    System.out.println(words.isEmpty());
+    words.clear();
+    System.out.println(words.isEmpty());
   }
 }
