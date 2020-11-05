@@ -5,6 +5,10 @@ class SuperArray {
     data = new String[10];
     size = 0;
   }
+  public SuperArray(int initialCapacity) {
+    data = new String[initialCapacity];
+    size = 0;
+  }
   public int size() {
     return size;
   }
@@ -39,11 +43,12 @@ class SuperArray {
     size = 0;
   }
   public String toString() {
-    String x = "";
+    String x = "[";
     for (int i = 0; i < data.length; i++) {
       x += data[i];
       x += ", ";
     }
+    x += "]";
     return x;
   }
   public boolean contains(String s) {
@@ -54,4 +59,16 @@ class SuperArray {
       }
             return false;
     }
+  public void add(int index, String element) {
+     String[] datatemp = new String[data.length + 1];
+     for(int i = 0; i < index-1; i++) {
+       datatemp[i] = data[i];
+     }
+     datatemp[index] = element;
+     for(int i = index + 1; i < datatemp.length; i++) {
+       datatemp[i] = data[i - 1];
+     }
+     data = datatemp;
+  }
+
 }

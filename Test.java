@@ -1,6 +1,6 @@
 class Test {
   public static void main(String[] args) {
-    SuperArray words = new SuperArray();
+    SuperArray words = new SuperArray(10);
     words.add("kani");
     words.add("uni");
     words.add("ebi");
@@ -21,6 +21,11 @@ class Test {
     System.out.println(words.toString());
     System.out.println(words.contains("uni"));
     System.out.println(words.contains("bean"));
+    words.add(4, "testadd");
+    System.out.println("After adding...");
+    for(int i = 0; i < words.size(); i++){
+      System.out.println( words.get(i) );
+    }
     words.clear();
     System.out.println(words.isEmpty());
   }
