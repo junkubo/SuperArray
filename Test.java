@@ -26,6 +26,13 @@ class Test {
     for(int i = 0; i < words.size(); i++){
       System.out.println( words.get(i) );
     }
+    String removed = words.remove(4);
+    System.out.println(removed);
+    System.out.println("After remove");
+    for(int i = 0; i < words.size(); i++){
+      System.out.println( words.get(i) );
+    }
+
     words.clear();
     System.out.println(words.isEmpty());
   }
