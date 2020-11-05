@@ -51,14 +51,17 @@ class SuperArray {
     x += "]";
     return x;
   }
-  public boolean contains(String s) {
-    for (int i = 0; i < data.length; i++) {
-      if (s.equals(data[i])) {
+  public boolean contains(String s){
+    int i = 0;
+    while (i < data.length) {
+      if((data[i] != null) && (data[i].equals(s))) {
         return true;
       }
-      }
-            return false;
+      i = i + 1;
     }
+    return false;
+  }
+
   public void add(int index, String element) {
      String[] datatemp = new String[data.length + 1];
      for(int i = 0; i < index; i++) {
@@ -72,17 +75,11 @@ class SuperArray {
   }
 
   public String remove(int index) {
-    String[] datatemp = new String[data.length - 1];
-    String toRemove = data[index];
-
-    for(int i = 0; i < index; i++) {
-      datatemp[i] = data[i];
+    String temp = data[index];
+    for(int i = index; i < size - 1; i++) {
+      data[i] = data[i + 1];
     }
-    for(int i = index; i < datatemp.length; i++) {
-      datatemp[i] = data[i - 1];
-    }
-    data = datatemp;
-    return toRemove;
+    return temp;
   }
 
   public int indexOf(String s) {
