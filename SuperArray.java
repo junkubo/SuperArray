@@ -94,6 +94,8 @@ class SuperArray {
       return -1;
   }
 
-
+  public String[] toArray() {
+    return data;
+  }
 
 }

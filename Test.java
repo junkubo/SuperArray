@@ -34,6 +34,7 @@ class Test {
     }
     System.out.println(words.indexOf("ebi2"));
     System.out.println(words.indexOf("ebiy"));
+    System.out.println(words.toArray());
     words.clear();
     System.out.println(words.isEmpty());
   }
