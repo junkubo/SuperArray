@@ -32,7 +32,8 @@ class Test {
     for(int i = 0; i < words.size(); i++){
       System.out.println( words.get(i) );
     }
-
+    System.out.println(words.indexOf("ebi2"));
+    System.out.println(words.indexOf("ebiy"));
     words.clear();
     System.out.println(words.isEmpty());
   }
