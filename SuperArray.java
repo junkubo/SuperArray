@@ -1,8 +1,10 @@
+import java.util.*;
+
 class SuperArray {
   private String[] data;
   private int size;
   public SuperArray() {
-    data = new String[10];
+    data = new String[0];
     size = 0;
   }
   public SuperArray(int initialCapacity) {
@@ -46,40 +48,54 @@ class SuperArray {
     String x = "[";
     for (int i = 0; i < data.length; i++) {
       x += data[i];
-      x += ", ";
+      if (i < data.length-1) {
+        x += ", ";
+      }
     }
     x += "]";
     return x;
   }
-  public boolean contains(String s){
-    int i = 0;
-    while (i < data.length) {
-      if((data[i] != null) && (data[i].equals(s))) {
-        return true;
-      }
-      i = i + 1;
+
+  public boolean contains(String s) {
+    if (s == null) return false;
+    for (int i = 0; i < data.length; i++) {
+        if (s.equals(data[i])) {
+          return true;
+        }
     }
-    return false;
+      return false;
   }
 
   public void add(int index, String element) {
-     String[] datatemp = new String[data.length + 1];
-     for(int i = 0; i < index; i++) {
-       datatemp[i] = data[i];
-     }
-     datatemp[index] = element;
-     for(int i = index + 1; i < datatemp.length; i++) {
-       datatemp[i] = data[i - 1];
-     }
-     data = datatemp;
+    if (index >= 0 && index < data.length) {
+       String[] datatemp = new String[data.length + 1];
+       for(int i = 0; i < index; i++) {
+         datatemp[i] = data[i];
+       }
+       datatemp[index] = element;
+       for(int i = index + 1; i < datatemp.length; i++) {
+         datatemp[i] = data[i-1];
+         //System.out.println("Adding: " + data[i-1]);
+       }
+       data = datatemp;
+       size = data.length;
+   }
   }
 
   public String remove(int index) {
-    String temp = data[index];
-    for(int i = index; i < size - 1; i++) {
-      data[i] = data[i + 1];
+    //if (index < 0 || index > data.length-1) return "";
+    String[] datatemp = new String[data.length - 1];
+    String toRemove = data[index];
+
+    for(int i = 0; i < index; i++) {
+      datatemp[i] = data[i];
     }
-    return temp;
+    for(int i = index; i < datatemp.length; i++) {
+      datatemp[i] = data[i + 1];
+    }
+    data = datatemp;
+    size = data.length;
+    return toRemove;
   }
 
   public int indexOf(String s) {
@@ -92,7 +108,11 @@ class SuperArray {
   }
 
   public String[] toArray() {
-    return data;
+    String[] newData = new String[data.length];
+    for (int i = 0; i < data.length; i++) {
+      newData[i] = data[i];
+    }
+    return newData;
   }
 
 }
