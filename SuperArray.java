@@ -114,5 +114,22 @@ class SuperArray {
     }
     return newData;
   }
+  public int lastIndexOf(String value){
+    for(int i = data.length - 1; i >= 0; i--){
+      if(data[i].equals(value)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  public boolean equals(SuperArray other){
+    if(data.length != other.size()) {
+      return false;
+    }
+    for(int i = 0; i < data.length; i++) {
+      if(!data[i].equals(other.get(i))) return false;
+    }
+    return true;
+    }
 
 }
