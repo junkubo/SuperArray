@@ -23,6 +23,14 @@ public class Demo{
     }
     return c;
   }
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray c = new SuperArray();
+    for(int i = 0; i < Math.max(a.size(), b.size()); i++) {
+      if(i < a.size()) c.add(a.get(i));
+      if(i < b.size()) c.add(b.get(i));
+    }
+    return c;
+    }
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
@@ -39,5 +47,6 @@ public class Demo{
     System.out.println(words.lastIndexOf("una"));
     System.out.println(words.equals(words2));
     System.out.println(words.equals(words));
+    System.out.println(zip(words, words2));
   }
 }
