@@ -1,5 +1,6 @@
 class Test {
   public static void main(String[] args) {
+
     SuperArray words = new SuperArray(10);
     words.add("kani");
     words.add("uni");
@@ -13,6 +14,13 @@ class Test {
     words.add("ebi6");
     words.add("ebi7");
     words.add("ebi8");
+
+    // test throw errors
+    //SuperArray words3 = new SuperArray(-10);
+    //System.out.println(words.get(-3));
+    //System.out.println(words.set(100, "errorTest"));
+    //words.add(123, "errorTest");
+    //System.out.println(words.remove(126));
 
     for(int i = 0; i < words.size(); i++){
       System.out.println( words.get(i) );
@@ -35,6 +43,7 @@ class Test {
     System.out.println(words.indexOf("ebi2"));
     System.out.println(words.indexOf("ebiy"));
     System.out.println(words.toArray());
+
     words.clear();
     System.out.println(words.isEmpty());
   }
